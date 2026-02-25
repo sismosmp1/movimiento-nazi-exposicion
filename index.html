@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Movimiento Nazi – Análisis Histórico</title>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJgoGkFK7QbrBXwGICLilqWkEZ8Wjwm97ET1ltkLZb9Q&s=10"Descripción">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:"Segoe UI", Arial, sans-serif;
+background:#0b0d12;
+color:#e6e6e6;
+line-height:1.9;
+overflow-x:hidden;
+}
+
+#progress{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+width:0%;
+background:#7a1c1c;
+z-index:1000;
+}
+
+/* INTRO */
+#intro{
+position:fixed;
+width:100%;
+height:100vh;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+z-index:999;
+}
+
+#intro h1{
+font-size:3rem;
+color:#b22222;
+margin-bottom:20px;
+}
+
+#intro h2{
+color:#aaa;
+margin-bottom:40px;
+font-weight:400;
+}
+
+.name{
+opacity:0;
+font-size:1.1rem;
+animation:fadeName 1s forwards;
+}
+
+@keyframes fadeName{
+to{opacity:1}
+}
+
+button{
+margin-top:40px;
+padding:15px 35px;
+background:#7a1c1c;
+border:none;
+color:white;
+font-size:1rem;
+cursor:pointer;
+border-radius:6px;
+}
+
+/* SECCIONES */
+section{
+padding:100px 10%;
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+border-bottom:1px solid #1a1d24;
+}
+
+section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+h3{
+font-size:2rem;
+margin-bottom:30px;
+color:#d4af37;
+}
+
+/* CONTENIDO CON IMAGEN FLOTANTE */
+.content{
+max-width:1100px;
+margin:auto;
+position:relative;
+}
+
+.float-img{
+float:right;
+width:260px;
+margin:0 0 20px 40px;
+border:3px solid #222;
+padding:6px;
+background:#12151b;
+box-shadow:0 0 25px rgba(0,0,0,0.7);
+}
+
+.float-img img{
+width:100%;
+height:auto;
+display:block;
+}
+
+/* RELOJ */
+.clock-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:40px;
+}
+
+.clock{
+background:#151922;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+
+.clock h4{
+margin-bottom:15px;
+color:#b22222;
+}
+
+.counter{
+font-size:1.1rem;
+color:#d4af37;
+}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+.float-img{
+float:none;
+margin:20px auto;
+display:block;
+}
+.clock-grid{
+grid-template-columns:1fr;
+}
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#666;
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<div id="intro">
+<h1>El Movimiento Nazi</h1>
+<h2>Análisis histórico, político y humano (1933–1945)</h2>
+<div id="names"></div>
+<button onclick="startPresentation()">Iniciar Presentación</button>
+</div>
+
+<section>
+<h3>1. Alemania tras la Primera Guerra Mundial</h3>
+<div class="content">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRYGYAukFs6wejcmOhZm-5FdzZ4eFRUX9LdwK6wAki2KGqQO2ZQgW_avY&s=10" alt="Descripción">
+
+</div>
+
+<p>Al finalizar la Primera Guerra Mundial en 1918, Alemania quedó devastada económica y moralmente. El Tratado de Versalles impuso sanciones severas, reducción militar y pérdida de territorios estratégicos. Para muchas familias, esto significó hambre, desempleo y una sensación profunda de humillación nacional.</p>
+
+<p>Durante la República de Weimar, el país enfrentó hiperinflación en 1923. Los salarios perdían valor en cuestión de horas y los ahorros desaparecían. Más tarde, la Gran Depresión de 1929 empeoró la situación, elevando el desempleo a millones.</p>
+
+<p>En ese contexto de crisis, muchas personas comenzaron a buscar líderes que prometieran soluciones rápidas, estabilidad y orgullo nacional.</p>
+
+</div>
+</section>
+
+<section>
+<h3>2. El ascenso de Adolf Hitler</h3>
+<div class="content">
+
+ <img src="https://tierraadentro.fondodeculturaeconomica.com/wp-content/uploads/2021/07/800px-242-EB-6-43A_-_DPLA_-_1efd121f86de82fe26546c98307d52fa.jpg"Descripción">
+</div>
+
+<p>Adolf Hitler, líder del Partido Nacionalsocialista Alemán (NSDAP), supo capitalizar el descontento social. Su discurso apelaba al orgullo nacional y señalaba enemigos internos y externos como responsables de la crisis.</p>
+
+<p>En 1933 fue nombrado canciller. Poco después, eliminó la oposición política y estableció un régimen totalitario. Se suspendieron libertades civiles y se consolidó el control absoluto del Estado.</p>
+
+</div>
+</section>
+
+<section>
+<h3>3. Ideología y propaganda</h3>
+<div class="content">
+
+<img src="https://encyclopedia.ushmm.org/images/large/23819074-cf45-423c-af1a-9d75f8965832.jpg"Descripción">
+</div>
+
+<p>El nazismo promovía el ultranacionalismo, el antisemitismo y la supremacía racial. La propaganda fue utilizada masivamente a través de la radio, el cine y la educación.</p>
+
+<p>Se fomentó el culto al líder y la obediencia absoluta. La juventud fue adoctrinada desde temprana edad mediante organizaciones oficiales.</p>
+
+</div>
+</section>
+
+<section>
+<h3>4. El Holocausto</h3>
+<div class="content">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRggeR1F3-P22xyDKcWaQuLOE7NtCsZ7RAwXf9trKZjhPt_8OnoVrLihb0&s=10"Descripción">
+
+</div>
+
+<p>El Holocausto fue el exterminio sistemático de aproximadamente seis millones de judíos. También fueron perseguidos opositores políticos, personas con discapacidad, población romaní y otras minorías.</p>
+
+<p>Se establecieron campos de concentración y exterminio. Este episodio representa uno de los capítulos más oscuros de la historia humana.</p>
+
+</div>
+</section>
+
+<section>
+<h3>5. Segunda Guerra Mundial</h3>
+<div class="content">
+
+<img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/12A7A/production/_113601467_1-1.jpg.webp"Descripción">
+
+</div>
+
+<p>En 1939 Alemania invadió Polonia, iniciando la Segunda Guerra Mundial. El conflicto se expandió por Europa, África y Asia.</p>
+
+<p>Se estima que murieron más de 70 millones de personas. Ciudades enteras fueron destruidas y millones quedaron desplazados.</p>
+
+</div>
+</section>
+
+<section>
+<h3>6. El paso del tiempo</h3>
+
+<div class="clock-grid">
+<div class="clock">
+<h4>Desde la muerte de Hitler (30 abril 1945)</h4>
+<div id="hitlerCounter" class="counter"></div>
+</div>
+
+<div class="clock">
+<h4>Desde la rendición alemana (8 mayo 1945)</h4>
+<div id="warCounter" class="counter"></div>
+</div>
+</div>
+
+</section>
+
+<footer>
+COLEGIO NACIONAL TERCERO DE BACHILLERATO 
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBFTQYXfgswWBLAh-55MrePeqRe9kNFuxkRXo8sR_fOA&s=10"Descripción">
+</footer>
+
+<script>
+const integrantes=[
+"Gerardo Flores Hernández",
+"Luis Fernando Guzmán Sánchez",
+"Gloria Sofía Lira Aguilar",
+"Adrian Herrera García",
+"Sebastián Rojas Mendoza"
+];
+
+const namesDiv=document.getElementById("names");
+integrantes.forEach((name,index)=>{
+let div=document.createElement("div");
+div.classList.add("name");
+div.style.animationDelay=(index*1)+"s";
+div.innerText=name;
+namesDiv.appendChild(div);
+});
+
+function startPresentation(){
+document.getElementById("intro").style.display="none";
+}
+
+const sections=document.querySelectorAll("section");
+function reveal(){
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top<window.innerHeight-100){
+sec.classList.add("visible");
+}
+});
+}
+window.addEventListener("scroll",reveal);
+reveal();
+
+window.addEventListener("scroll",()=>{
+let scrollTop=document.documentElement.scrollTop;
+let scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+let progress=(scrollTop/scrollHeight)*100;
+document.getElementById("progress").style.width=progress+"%";
+});
+
+function updateCounter(id,date){
+let eventDate=new Date(date);
+let now=new Date();
+let diff=now-eventDate;
+let years=Math.floor(diff/(1000*60*60*24*365.25));
+let days=Math.floor((diff/(1000*60*60*24))%365);
+let hours=Math.floor((diff/(1000*60*60))%24);
+let minutes=Math.floor((diff/(1000*60))%60);
+let seconds=Math.floor((diff/1000)%60);
+document.getElementById(id).innerHTML=
+years+" años, "+days+" días, "+hours+" horas, "+minutes+" minutos, "+seconds+" segundos";
+}
+
+setInterval(()=>{
+updateCounter("hitlerCounter","April 30, 1945 15:30:00");
+updateCounter("warCounter","May 8, 1945 23:01:00");
+},1000);
+</script>
+
+</body>
+</html>
