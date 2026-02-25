@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Movimiento Nazi – Análisis Histórico</title>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJgoGkFK7QbrBXwGICLilqWkEZ8Wjwm97ET1ltkLZb9Q&s=10"Descripción">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -16,141 +16,146 @@ line-height:1.9;
 overflow-x:hidden;
 }
 
+/* Barra progreso */
 #progress{
 position:fixed;
 top:0;
 left:0;
 height:4px;
 width:0%;
-background:#7a1c1c;
+background:#d4af37;
 z-index:1000;
 }
 
-/* INTRO */
-#intro{
-position:fixed;
-width:100%;
-height:100vh;
-background:#000;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+header{
+padding:80px 10%;
 text-align:center;
-z-index:999;
+border-bottom:1px solid #1a1d24;
+position:relative;
 }
 
-#intro h1{
+header h1{
+color:#d4af37;
 font-size:3rem;
-color:#b22222;
-margin-bottom:20px;
+margin-bottom:10px;
 }
 
-#intro h2{
+header h2{
 color:#aaa;
-margin-bottom:40px;
 font-weight:400;
 }
 
+.header-img{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:90px;
+height:90px;
+border:2px solid #333;
+background:#111;
+border-radius:8px;
+object-fit:cover;
+}
+
+.left-header{left:5%;}
+.right-header{right:5%;}
+
 .name{
 opacity:0;
-font-size:1.1rem;
 animation:fadeName 1s forwards;
+color:#888;
 }
 
 @keyframes fadeName{
 to{opacity:1}
 }
 
-button{
-margin-top:40px;
-padding:15px 35px;
-background:#7a1c1c;
-border:none;
-color:white;
-font-size:1rem;
-cursor:pointer;
-border-radius:6px;
-}
+/* ===== LINEA DEL TIEMPO ===== */
 
-/* SECCIONES */
 section{
-padding:100px 10%;
-opacity:0;
-transform:translateY(40px);
-transition:1s ease;
-border-bottom:1px solid #1a1d24;
+position:relative;
+width:70%;
+margin:80px auto;
+padding-left:60px;
 }
 
-section.visible{
-opacity:1;
-transform:translateY(0);
+/* Línea vertical */
+section::before{
+content:"";
+position:absolute;
+left:20px;
+top:0;
+width:4px;
+height:100%;
+background:#222;
+}
+
+/* Punto en la línea */
+section::after{
+content:"";
+position:absolute;
+left:12px;
+top:20px;
+width:18px;
+height:18px;
+background:#d4af37;
+border-radius:50%;
+box-shadow:0 0 15px rgba(212,175,55,0.6);
+}
+
+/* Caja de contenido */
+.content{
+background:#151922;
+padding:35px;
+border-radius:12px;
+box-shadow:0 0 25px rgba(0,0,0,0.6);
+transition:0.3s;
+}
+
+.content:hover{
+transform:translateY(-5px);
+box-shadow:0 0 35px rgba(0,0,0,0.8);
 }
 
 h3{
-font-size:2rem;
-margin-bottom:30px;
-color:#d4af37;
-}
-
-/* CONTENIDO CON IMAGEN FLOTANTE */
-.content{
-max-width:1100px;
-margin:auto;
-position:relative;
-}
-
-.float-img{
-float:right;
-width:260px;
-margin:0 0 20px 40px;
-border:3px solid #222;
-padding:6px;
-background:#12151b;
-box-shadow:0 0 25px rgba(0,0,0,0.7);
-}
-
-.float-img img{
-width:100%;
-height:auto;
-display:block;
-}
-
-/* RELOJ */
-.clock-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-margin-top:40px;
-}
-
-.clock{
-background:#151922;
-padding:25px;
-border-radius:10px;
-box-shadow:0 0 20px rgba(0,0,0,0.6);
-}
-
-.clock h4{
-margin-bottom:15px;
+font-size:1.8rem;
+margin-bottom:20px;
 color:#b22222;
 }
 
-.counter{
-font-size:1.1rem;
+.content img{
+width:100%;
+max-width:500px;
+display:block;
+margin:20px auto;
+border-radius:10px;
+border:3px solid #222;
+padding:5px;
+background:#111;
+}
+
+p{
+margin-bottom:18px;
+font-size:1.05rem;
+}
+
+/* ESTADISTICAS */
+.clock{
+background:#0f131a;
+padding:18px;
+border-radius:10px;
+margin-top:20px;
+border-left:4px solid #d4af37;
+}
+
+.clock h4{
+margin-bottom:10px;
 color:#d4af37;
 }
 
-/* RESPONSIVE */
-@media (max-width:900px){
-.float-img{
-float:none;
-margin:20px auto;
-display:block;
-}
-.clock-grid{
-grid-template-columns:1fr;
-}
+.counter{
+color:#ffffff;
+font-weight:bold;
 }
 
 footer{
@@ -164,26 +169,35 @@ color:#666;
 
 <div id="progress"></div>
 
-<div id="intro">
+<header>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2MPXzccNMuN1x0aEfbAaukxeRMgLkm_wga94om-bxLQ&s=10" class="header-img left-header">
+
 <h1>El Movimiento Nazi</h1>
+
 <h2>Análisis histórico, político y humano (1933–1945)</h2>
-<div id="names"></div>
-<button onclick="startPresentation()">Iniciar Presentación</button>
-</div>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2MPXzccNMuN1x0aEfbAaukxeRMgLkm_wga94om-bxLQ&s=10" class="header-img right-header">
+
+<div id="names" style="margin-top:30px;"></div>
+
+</header>
 
 <section>
 <h3>1. Alemania tras la Primera Guerra Mundial</h3>
 <div class="content">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRYGYAukFs6wejcmOhZm-5FdzZ4eFRUX9LdwK6wAki2KGqQO2ZQgW_avY&s=10">
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRYGYAukFs6wejcmOhZm-5FdzZ4eFRUX9LdwK6wAki2KGqQO2ZQgW_avY&s=10" alt="Descripción">
+<p>Tras la derrota en 1918, Alemania enfrentó una profunda crisis económica, política y social. El Tratado de Versalles impuso fuertes indemnizaciones, limitaciones militares y pérdida de territorios estratégicos.</p>
 
+<p>En 1923 ocurrió una hiperinflación extrema: el marco alemán perdió casi todo su valor. Las personas necesitaban carretillas llenas de billetes para comprar alimentos básicos.</p>
+
+<p>Entre 1929 y 1932 el desempleo superó los 6 millones de personas debido a la Gran Depresión, debilitando aún más la confianza en la República de Weimar.</p>
+
+<div class="clock">
+<h4>Tiempo desde el fin de la Primera Guerra Mundial (11 nov 1918)</h4>
+<div id="ww1Counter" class="counter"></div>
 </div>
-
-<p>Al finalizar la Primera Guerra Mundial en 1918, Alemania quedó devastada económica y moralmente. El Tratado de Versalles impuso sanciones severas, reducción militar y pérdida de territorios estratégicos. Para muchas familias, esto significó hambre, desempleo y una sensación profunda de humillación nacional.</p>
-
-<p>Durante la República de Weimar, el país enfrentó hiperinflación en 1923. Los salarios perdían valor en cuestión de horas y los ahorros desaparecían. Más tarde, la Gran Depresión de 1929 empeoró la situación, elevando el desempleo a millones.</p>
-
-<p>En ese contexto de crisis, muchas personas comenzaron a buscar líderes que prometieran soluciones rápidas, estabilidad y orgullo nacional.</p>
 
 </div>
 </section>
@@ -191,13 +205,18 @@ color:#666;
 <section>
 <h3>2. El ascenso de Adolf Hitler</h3>
 <div class="content">
+<img src="https://tierraadentro.fondodeculturaeconomica.com/wp-content/uploads/2021/07/800px-242-EB-6-43A_-_DPLA_-_1efd121f86de82fe26546c98307d52fa.jpg">
 
- <img src="https://tierraadentro.fondodeculturaeconomica.com/wp-content/uploads/2021/07/800px-242-EB-6-43A_-_DPLA_-_1efd121f86de82fe26546c98307d52fa.jpg"Descripción">
+<p>Adolf Hitler fue nombrado Canciller el 30 de enero de 1933. En pocos meses eliminó la oposición política mediante decretos de emergencia.</p>
+
+<p>El incendio del Reichstag permitió suspender libertades civiles y perseguir a opositores.</p>
+
+<p>En 1934, tras la muerte del presidente Hindenburg, Hitler concentró todo el poder bajo el título de Führer.</p>
+
+<div class="clock">
+<h4>Tiempo desde que fue nombrado Canciller (30 enero 1933)</h4>
+<div id="cancillerCounter" class="counter"></div>
 </div>
-
-<p>Adolf Hitler, líder del Partido Nacionalsocialista Alemán (NSDAP), supo capitalizar el descontento social. Su discurso apelaba al orgullo nacional y señalaba enemigos internos y externos como responsables de la crisis.</p>
-
-<p>En 1933 fue nombrado canciller. Poco después, eliminó la oposición política y estableció un régimen totalitario. Se suspendieron libertades civiles y se consolidó el control absoluto del Estado.</p>
 
 </div>
 </section>
@@ -205,13 +224,18 @@ color:#666;
 <section>
 <h3>3. Ideología y propaganda</h3>
 <div class="content">
+<img src="https://encyclopedia.ushmm.org/images/large/23819074-cf45-423c-af1a-9d75f8965832.jpg">
 
-<img src="https://encyclopedia.ushmm.org/images/large/23819074-cf45-423c-af1a-9d75f8965832.jpg"Descripción">
+<p>La ideología nazi promovía el ultranacionalismo y la supremacía racial aria.</p>
+
+<p>Joseph Goebbels dirigió el Ministerio de Propaganda, controlando radio, prensa y cine para influir en la opinión pública.</p>
+
+<p>La educación fue modificada para inculcar obediencia y lealtad absoluta al régimen.</p>
+
+<div class="clock">
+<h4>Tiempo desde creación del Ministerio de Propaganda (13 marzo 1933)</h4>
+<div id="propagandaCounter" class="counter"></div>
 </div>
-
-<p>El nazismo promovía el ultranacionalismo, el antisemitismo y la supremacía racial. La propaganda fue utilizada masivamente a través de la radio, el cine y la educación.</p>
-
-<p>Se fomentó el culto al líder y la obediencia absoluta. La juventud fue adoctrinada desde temprana edad mediante organizaciones oficiales.</p>
 
 </div>
 </section>
@@ -219,14 +243,18 @@ color:#666;
 <section>
 <h3>4. El Holocausto</h3>
 <div class="content">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRggeR1F3-P22xyDKcWaQuLOE7NtCsZ7RAwXf9trKZjhPt_8OnoVrLihb0&s=10">
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRggeR1F3-P22xyDKcWaQuLOE7NtCsZ7RAwXf9trKZjhPt_8OnoVrLihb0&s=10"Descripción">
+<p>El Holocausto fue el genocidio sistemático de aproximadamente seis millones de judíos europeos.</p>
 
+<p>Además, millones de personas romaníes, discapacitadas, prisioneros de guerra y opositores políticos fueron perseguidos.</p>
+
+<p>Campos como Auschwitz-Birkenau se convirtieron en símbolos del exterminio masivo.</p>
+
+<div class="clock">
+<h4>Tiempo desde liberación de Auschwitz (27 enero 1945)</h4>
+<div id="auschwitzCounter" class="counter"></div>
 </div>
-
-<p>El Holocausto fue el exterminio sistemático de aproximadamente seis millones de judíos. También fueron perseguidos opositores políticos, personas con discapacidad, población romaní y otras minorías.</p>
-
-<p>Se establecieron campos de concentración y exterminio. Este episodio representa uno de los capítulos más oscuros de la historia humana.</p>
 
 </div>
 </section>
@@ -234,38 +262,29 @@ color:#666;
 <section>
 <h3>5. Segunda Guerra Mundial</h3>
 <div class="content">
+<img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/12A7A/production/_113601467_1-1.jpg.webp">
 
-<img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/12A7A/production/_113601467_1-1.jpg.webp"Descripción">
+<p>El 1 de septiembre de 1939 Alemania invadió Polonia, iniciando la Segunda Guerra Mundial.</p>
 
-</div>
+<p>El conflicto involucró más de 60 países y dejó alrededor de 70 millones de muertos.</p>
 
-<p>En 1939 Alemania invadió Polonia, iniciando la Segunda Guerra Mundial. El conflicto se expandió por Europa, África y Asia.</p>
+<p>La guerra finalizó en Europa el 8 de mayo de 1945 con la rendición alemana.</p>
 
-<p>Se estima que murieron más de 70 millones de personas. Ciudades enteras fueron destruidas y millones quedaron desplazados.</p>
-
-</div>
-</section>
-
-<section>
-<h3>6. El paso del tiempo</h3>
-
-<div class="clock-grid">
 <div class="clock">
-<h4>Desde la muerte de Hitler (30 abril 1945)</h4>
-<div id="hitlerCounter" class="counter"></div>
+<h4>Tiempo desde inicio de la Segunda Guerra Mundial</h4>
+<div id="ww2Counter" class="counter"></div>
 </div>
 
 <div class="clock">
-<h4>Desde la rendición alemana (8 mayo 1945)</h4>
+<h4>Tiempo desde rendición alemana</h4>
 <div id="warCounter" class="counter"></div>
 </div>
+
 </div>
 
+</div>
 </section>
-
 <footer>
-COLEGIO NACIONAL TERCERO DE BACHILLERATO 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBFTQYXfgswWBLAh-55MrePeqRe9kNFuxkRXo8sR_fOA&s=10"Descripción">
 </footer>
 
 <script>
@@ -274,38 +293,17 @@ const integrantes=[
 "Luis Fernando Guzmán Sánchez",
 "Gloria Sofía Lira Aguilar",
 "Adrian Herrera García",
-"Sebastián Rojas Mendoza"
+"Sebastián Rojas Mendoza",
+"Esmeralda Arce Márquez"
 ];
 
 const namesDiv=document.getElementById("names");
 integrantes.forEach((name,index)=>{
 let div=document.createElement("div");
 div.classList.add("name");
-div.style.animationDelay=(index*1)+"s";
+div.style.animationDelay=(index*0.5)+"s";
 div.innerText=name;
 namesDiv.appendChild(div);
-});
-
-function startPresentation(){
-document.getElementById("intro").style.display="none";
-}
-
-const sections=document.querySelectorAll("section");
-function reveal(){
-sections.forEach(sec=>{
-if(sec.getBoundingClientRect().top<window.innerHeight-100){
-sec.classList.add("visible");
-}
-});
-}
-window.addEventListener("scroll",reveal);
-reveal();
-
-window.addEventListener("scroll",()=>{
-let scrollTop=document.documentElement.scrollTop;
-let scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-let progress=(scrollTop/scrollHeight)*100;
-document.getElementById("progress").style.width=progress+"%";
 });
 
 function updateCounter(id,date){
@@ -322,9 +320,20 @@ years+" años, "+days+" días, "+hours+" horas, "+minutes+" minutos, "+seconds+"
 }
 
 setInterval(()=>{
-updateCounter("hitlerCounter","April 30, 1945 15:30:00");
+updateCounter("ww1Counter","November 11, 1918 11:00:00");
+updateCounter("cancillerCounter","January 30, 1933 10:00:00");
+updateCounter("propagandaCounter","March 13, 1933 12:00:00");
+updateCounter("auschwitzCounter","January 27, 1945 15:00:00");
+updateCounter("ww2Counter","September 1, 1939 04:45:00");
 updateCounter("warCounter","May 8, 1945 23:01:00");
 },1000);
+
+window.addEventListener("scroll",()=>{
+let scrollTop=document.documentElement.scrollTop;
+let scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+let progress=(scrollTop/scrollHeight)*100;
+document.getElementById("progress").style.width=progress+"%";
+});
 </script>
 
 </body>
